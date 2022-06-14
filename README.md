@@ -114,6 +114,8 @@ Updates 20, num timesteps 7560, FPS 645
 
 
 3. Plotting training curve
-![eprewmean](https://user-images.githubusercontent.com/48710703/173532606-7a8a5763-b33c-4367-adbc-bb6b2166144d.png)
+
+
+![eprewmean](https://user-images.githubusercontent.com/48710703/173532606-7a8a5763-b33c-4367-adbc-bb6b2166144d.png)<br>
 
 ![value_loss](https://user-images.githubusercontent.com/48710703/173532615-c4094a23-ac50-4a1a-b3ee-6d2ea6694bb5.png)
