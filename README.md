@@ -2,7 +2,7 @@
 
 
 
-This is a tutorial for installing DSRNN-Crowd Navigation
+This is a tutorial for installing DSRNN-Crowd Navigation.
 
 [For a detailed explanation](https://github.com/Shuijing725/CrowdNav_DSRNN)
 
@@ -10,11 +10,11 @@ This is a tutorial for installing DSRNN-Crowd Navigation
 
 ## 1. How to install
 
-1. **Install Python3.6** 
+1. **Install Python 3.6** 
 
-   The code may work with other versions of Python, but 3.6 is highly recommended.
+   The code may work with other versions of Python, but **Python 3.6** is highly recommended.
 
-   Make sure that you need to use Python 3.6 as default, so you might have to use [Virtualenv](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/).
+   Make sure that you need to use Python 3.6 as default, so you might have to use [Virtualenv](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) or [Anaconda](https://www.cloudsigma.com/how-to-install-anaconda-on-ubuntu-18-04-in-six-simple-steps/).
 
 2. **Clone the repository and install the required python package using pip.**
 
@@ -33,18 +33,21 @@ This is a tutorial for installing DSRNN-Crowd Navigation
 4. **Install [Python-RVO2](https://github.com/sybrenstuvel/Python-RVO2) library.**
 
    ```
-   git clone https://github.com/openai/baselines.git
-   cd baselines
-   pip install -e .
+   git clone https://github.com/sybrenstuvel/Python-RVO2
+   cd Python-RVO2
+   pip install -r requirements.txt
+   python setup.py build
+   python setup.py install
    ```
 
-5. **Finally, you have to check if you can import installed modules.**
+5. **Finally, you have to check if you can import installed modules.**<br>If there's no error messages, modules are installed correctly.
 
    ```
    python
    >> import tensorflow
    >> import pandas
    >> import baselines
+   >> import rvo2
    ```
 
 
@@ -54,6 +57,23 @@ If all modules are imported correctly, the next step is training & testing DS-RN
 
 
 ## 2. How to use
+
+### Getting started
+This repository is organized in three parts:
+
+* ``crowd_sim/`` folder contains the simulation environment.
+* ``crowd_nav/`` folder contains configurations and non-neural network policies.
+* ``pytorchBaselines/`` contains the code for the DSRNN network and ppo algorithm.
+<br>Below are the instructions for training and testing policies.
+
+### Change configurations
+
+* Environment configurations and training hyperparameters: ``modify crowd_nav/configs/config.py``<br>
+* For FoV environment (left in the figure below): change the value of ``robot.FOV`` in ``config.py``
+* For Group environment (right in the figure below): set ``sim.group_human`` to ``True`` in ``config.py``
+
+
+### Run the code
 
 1. **Train a policy.**
 
