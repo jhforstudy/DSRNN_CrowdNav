@@ -104,7 +104,7 @@ This repository is organized in three parts:
 
 ## 3. Results
 
-
+### Execute .py files
 
 1. Trained about 10,000,000 timesteps for holonomic case.
 
@@ -139,3 +139,25 @@ Updates 20, num timesteps 7560, FPS 645
 ![eprewmean](https://user-images.githubusercontent.com/48710703/173532606-7a8a5763-b33c-4367-adbc-bb6b2166144d.png)<br>
 
 ![value_loss](https://user-images.githubusercontent.com/48710703/173532615-c4094a23-ac50-4a1a-b3ee-6d2ea6694bb5.png)
+
+
+### Code Review
+
+#### Before training
+
+In ``crowd_nav/configs/config.py``, you can change parameters for training.
+* ``environment settings``
+* ``human settings`` : size of human, maximum velocity, FoV, policy to control human
+* ``robot settings`` : size of robot, maximum veloity, FoV
+* ``reward function`` : rewards for your model
+* ``training config`` : path for saving new model file or loading created model file, number of timesteps
+
+#### After training
+
+In ``data/YOUR_DATA/progress.csv``, you can find trained data.
+* ``eprewmean`` : mean of reward for 1 update
+* ``policy_entropy`` : randomness of actions an agent can take
+* ``policy_loss`` : 
+* ``value_loss`` : 
+
+
