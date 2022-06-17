@@ -88,7 +88,7 @@ This repository is organized in three parts:
    Two trained example weights for each type of robot kinematics are provided:
 
    - Holonomic: `data/example_model/checkpoints/27776.pt`
-   - Unicycle: `data/example_model_unicycle/checkpoints/55554.pt`
+   - Unicycle: `data/example_model_unicycle/checkpoints/55554.pt`<br>
 
    ```
    python test.py
@@ -154,10 +154,9 @@ In ``crowd_nav/configs/config.py``, you can change parameters for training.
 
 #### After training
 
-In ``data/YOUR_DATA/progress.csv``, you can find trained data.
+In ``data/YOUR_DATA/progress.csv`` and ``data/YOUR_DATA/checkpoints/YOUR_MODEL.pt``, you can find trained data.
 * ``eprewmean`` : mean of reward for 1 update
 * ``policy_entropy`` : randomness of actions an agent can take
-* ``policy_loss`` : 
-* ``value_loss`` : 
-
+* ``policy_loss`` : The mean magnitude of policy loss function. Correlates to how much the policy (process for deciding actions) is changing. The magnitude of this should decrease during a successful training session. These values will oscillate during training. Generally they should be less than 1.0.
+* ``value_loss`` : The mean loss of the value function update. Correlates to how well the model is able to predict the value of each state. This should increase while the agent is learning, and then decrease once the reward stabilizes. These values will increase as the reward increases, and then should decrease once reward becomes stable.
 
