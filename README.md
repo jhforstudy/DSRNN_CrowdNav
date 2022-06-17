@@ -2,7 +2,8 @@
 
 
 
-This is a tutorial for installing DSRNN-Crowd Navigation.
+This is a tutorial for installing DSRNN-Crowd Navigation.<br>
+**NOTE : Download the modules from URL, not this repository.**
 
 [For a detailed explanation](https://github.com/Shuijing725/CrowdNav_DSRNN)
 
